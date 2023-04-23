@@ -1,0 +1,149 @@
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  box-sizing: border-box
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #444;
+}
+
+.stat-name {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.stat-value {
+  font-weight: normal;
+}
+
+
+.pokemon-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box
+
+}
+
+.type-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.type-list li {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  color: #444;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.stat-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.stat-table th,
+.stat-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.stat-table th {
+  text-align: left;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  color: #444;
+  font-size: 14px;
+}
+
+.abilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.abilities-list li {
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #444;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.card-title {
+  font-size: 32px;
+}
+
+.card-title + h1 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.card-text {
+  font-size: 20px;
+}
+
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex-basis: 50%;
+  padding: 5px;
+}
+
+.stat-name {
+  font-weight: bold;
+}
+
+.stat-value {
+  margin-left: 5px;
+}

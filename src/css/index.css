@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  body {
+    font-size: 16px;
+  }
+  
+  /* Set font size to 18px on screens that are at least 600px wide */
+  @media (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+  
+  /* Set font size to 20px on screens that are at least 900px wide */
+  @media (min-width: 900px) {
+    body {
+      font-size: 20px;
+    }
+  }
+  
+  /* Set font size to 22px on screens that are at least 1200px wide */
+  @media (min-width: 1200px) {
+    body {
+      font-size: 22px;
+    }
+  }
+  
