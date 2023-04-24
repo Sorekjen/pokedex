@@ -14,53 +14,58 @@ body {
 }
 
 .container {
-  max-width: 960px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* define the size of the grid columns */
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem; /* add some space between grid items */
   padding: 0px;
-
+  margin-bottom: 3.5rem;
   align-self: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .filterbox {
- margin: 0 auto;
+ margin: 0 0 auto;
 }
 
 /* Set 3 columns on screens that are at least 400px wide */
-@media (max-width: 800px) {
-  .container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Set 2 columns on screens that are less than 400px wide */
-@media (max-width: 600px) {
-  .container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 
 .paginationcontainer {
   display: flex;
   justify-content: center;
+  align-content: center;
   text-align: center;
+  align-self: center;
+  display: block;
   width: 100%;
-  margin: 0 auto;
-
+  height: 2.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  background-color: white;
+  opacity: 1;
+  z-index: 10000;
+  position: fixed;
+  bottom: 0;
 }
 
 /* Button style */
-button:disabled {
-  display: none;
+button.pagebutton:disabled {
+  background-color: lightgrey;
+  box-shadow: none;
+  cursor: default;
+
+  
 }
+button.pagebutton:disabled:hover {
+  translate: transformY(0px);
+  transform: none;
+}
+
 
 button {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
-  background-color: #747474;
+  background-color: #000000;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -74,5 +79,20 @@ button:active {
 
 button:hover {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: .25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
 }
 

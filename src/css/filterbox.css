@@ -1,6 +1,6 @@
 button.highlighted {
   opacity: 1;
-  border: 2px solid #000000;
+  border: 0.08rem solid #404040;
 }
 
 button.halfhighlight {
@@ -13,10 +13,10 @@ button {
   margin: 0.2rem;
   border-radius: 5px;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.6rem;
   font-weight: bold;
   justify-content: center;
-  width: 4rem;
+  width: 3.5rem;
   height: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,.7);
   text-transform: capitalize;
@@ -31,125 +31,109 @@ button:hover {
 }
 
 
-
-
-button.primary,
-button.secondary {
+button.primary, button.secondary {
   opacity: 0.8;
+  width: 4rem;
+  height: 1.8;
 }
 
 button.primary.highlighted, button.secondary.highlighted {
   opacity: 1;
 }
 
-.type-container,
-.primaryTypeContainer,
-.secondaryTypeContainer,
-.gen-container,
-.stat-container,
-.other-container {
-  text-align: center;
-  align-self: center;
-  display: block;
-  border-radius: 5px;
-  padding: 5px;
+
+
+
+
+.drop-list {
+  margin: 0.5rem auto;
 }
 
-.type-container button,
-.primaryTypeContainer button,
-.secondaryTypeContainer button,
-.gen-container button,
-.stat-container button,
-.other-container button {
-  display: inline-block;
-}
 
-.primaryTypeContainer button,
-.secondaryTypeContainer button {
-  width: 4rem;
-}
-
-.type-container button,
-.gen-container button,
-.stat-container button,
-.other-container button {
-  width: 5rem;
-  height: 2rem;
-}
-
-.type-container button,
-.primaryTypeContainer button,
-.secondaryTypeContainer button,
-.gen-container button,
-.stat-container button,
-.other-container button {
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  justify-content: center;
-  text-shadow: 1px 1px 2px rgba(0,0,0,.7);
-  text-transform: capitalize;
-}
-
-.stat-container
- {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
-  margin: 1rem auto;
-  width: 10rem;
-}
-
-.other-container {
-  width: 16rem;
-  justify-items: center;
-  margin: 1rem auto;
-
-}
 
 .filterbox {
   text-align: center;
   align-self: center;
   display: block;
-  border-radius: 5px;
   padding: 5px;
-  max-width: 500px;
+  width: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+}
+
+.stat-container, .gen-container {
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  max-width: 10rem;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.gen-container, .stat-container
+{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+.gen-container button{
+  width: 4.5rem;
+  height: 1.8rem;
+}
+
+@media (min-width: 800px) {
+  .type-container {
+   max-width: 700px;
+   margin: 0 auto;
+  }
+}
+   
+.other-container button.Ascending,  .other-container button.Descending {
+  width: 2rem;
+  height: 1.5rem;
+  padding: 0;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem
+  opacity: 0.9;
+  background-color: #ad2c2c;
+  font-size: 1rem;
+
+
 }
 
-.filterbox button {
-  width: 5rem;
-  height: 2rem;
+
+
+.filterbox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: left;
+  margin: 0rem 1rem;
+  
+  font-size: 0.8rem;
 }
 
-.filterbox button,
-.type-container button,
-.primaryTypeContainer button,
-.secondaryTypeContainer button,
-.gen-container button,
-.stat-container button,
-.other-container button {
-  margin: 0.15rem;
-  border-radius: 5px;
+.filterbox a {
+  text-decoration: none;
+  margin: 0rem 1rem;
+
+}
+.all-gens-button {
+  grid-column: 2 / span 2;
+  background-color: rgba(168, 144, 240, 0.9);
+
 }
 
-.primaryTypeContainer,
-.secondaryTypeContainer {
-  text-align: center;
-  align-self: center;
-  display: block;
-  border-radius: 5px;
-  padding: 5px;
+a:hover {
+  cursor: pointer;
 }
 
-#my-div {
-  display: none; /* set the default state to hidden */
-}
-.show {
-  display: block; /* show the div when the 'show' class is applied */
-}
+
+
+
+
 
 

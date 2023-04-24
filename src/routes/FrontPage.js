@@ -16,7 +16,7 @@ function getIDFromPokemon(pokemon) {
 
 function FrontPage() {
   const [generationsCached, setGenerationsCached] = useState([]);
-  const [filterProperties, setFilterProperties] = useState([{ stats: [], height: 0, weight: 0, genRange: [], primaryType: "", secondaryType: "" , toggle: false}]);
+  const [filterProperties, setFilterProperties] = useState([{ stats: [], height: 0, weight: 0, genRange: [], primaryType: "", secondaryType: "", toggle: false }]);
   const [generation, setGeneration] = useState([]);
   const [max, setMax] = useState(0);
   const [pokemonList, setPokemonList] = useState([]);
@@ -24,31 +24,31 @@ function FrontPage() {
   const [currentPokemonList, setCurrentPokemonList] = useState([]);
   const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [limit, setLimit] = useState(60); 
+  const [limit, setLimit] = useState(60);
   const [shouldRender, setShouldRender] = useState(false);
 
   async function getGeneration(generationNum) {
     let pokemonArray = [];
-    const promise =  await fetch(`https://pokeapi.co/api/v2/generation/${generationNum}`)
-    .then(response => response.json())
-    
+    const promise = await fetch(`https://pokeapi.co/api/v2/generation/${generationNum}`)
+      .then(response => response.json())
+
     const promises = promise.pokemon_species.map(pokemon => fetch(`https://pokeapi.co/api/v2/pokemon/${getIDFromPokemon(pokemon)}/`).then(response => response.json()));
     pokemonArray = await Promise.all(promises);
 
     setPokemonList(prevList => [...prevList, ...pokemonArray]); // spread the array of pokemon into the state array
   }
 
-  const onFilterChange = useCallback((newFilter) =>
-  {
+  const onFilterChange = useCallback((newFilter) => {
     setFilterProperties(newFilter);
+    setOffset(0)
+
   }, [filterProperties]);
 
   useEffect(() => {
-    if(!generation || generation.length === 0) return;
+    if (!generation || generation.length === 0) return;
     setIsLoading(true);
     for (let i = 0; i < generation.length; i++) {
-      if(!generationsCached.includes(generation[i]))
-      {
+      if (!generationsCached.includes(generation[i])) {
         getGeneration(generation[i]);
         setGenerationsCached(x => [...x, generation[i]]);
       };
@@ -61,7 +61,7 @@ function FrontPage() {
 
   useEffect(() => {
     function fetchPokemon() {
-    setCurrentPokemonList(filteredPokemonList ? filteredPokemonList.slice(offset, offset + limit) : []);
+      setCurrentPokemonList(filteredPokemonList ? filteredPokemonList.slice(offset, offset + limit) : []);
     }
     fetchPokemon();
     console.log("offset: " + offset);
@@ -87,46 +87,44 @@ function FrontPage() {
 
   useEffect(() => {
     console.log("filteredPokemonList: " + filteredPokemonList.map(x => x.name));
-    if(filteredPokemonList === undefined) return;
+    if (filteredPokemonList === undefined) return;
     setMax(filteredPokemonList.length);
   }, [filteredPokemonList]);
 
   return (
     <div className="App">
       <div className="filtercontainer">
-      <FilterBox callback={onFilterChange}/>
-
+        <FilterBox callback={onFilterChange} />
       </div>
       <div className="container">
-      {
-        
-      Array.from(currentPokemonList)
-        .map((pokemon, index) =>  {
-              return (
-                <div className="pokemoncard" key={pokemon.id}>
-                  <Card
-                    id={pokemon.id}
-                    pokemonData={pokemon}
-                  />
-                </div>
-              );
-            })}
-        
+        {Array.from(currentPokemonList)
+          .map((pokemon, index) => {
+            return (
+              <div className="pokemoncard" key={pokemon.id}>
+                <Card
+                  id={pokemon.id}
+                  pokemonData={pokemon}
+                />
+              </div>
+            );
+          })}
+
+    
+      </div>
       {isLoading ? (
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      ) : null}
-      </div>
-      <div className="paginationcontainer">
-      <Pagination
-        limit={limit}
-        offset={offset}
-        max={max}
-        setOffset={setOffset}
-        setLimit={setLimit}
-      />
-      </div>
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        ) : <div className="paginationcontainer">
+          <Pagination
+            limit={limit}
+            offset={offset}
+            max={max}
+            setOffset={setOffset}
+            setLimit={setLimit}
+          />
+        </div>}
+
     </div>
   );
 }

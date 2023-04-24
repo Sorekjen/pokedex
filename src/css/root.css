@@ -4,7 +4,10 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
-    height: 70px;
+    height: 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
   
   ul {
@@ -27,7 +30,6 @@ nav {
   a {
     color: #333;
     text-decoration: none;
-    font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.2s ease-in-out;
@@ -41,6 +43,31 @@ nav {
     color: #ff9a56;
   }
 
+  h3 {
+    display: block;
+    color: #333;
+    font-size: 1rem;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
 
 
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
   

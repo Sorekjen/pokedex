@@ -1,33 +1,43 @@
-import React from 'react';
 import '../css/pagination.css';
+import {useState, React, useEffect} from 'react';
+
+
 
 function Pagination({ offset, limit, max, setOffset, setLimit }) {
+  const [remaining, setRemaining] = useState(Math.max(max - (offset + limit), 0));
+
+  useEffect(() => {
+    setRemaining(Math.max(max - (offset + limit), 0));
+  }, [max, offset, limit]);
+
   const handlePrevClick = () => {
-    setLimit(60);
-    const newOffset = offset - 60;
+    const newOffset = offset - limit;
     setOffset(newOffset);
   };
 
   const handleNextClick = () => {
-    const remaining = max - (offset + limit);
-    const newLimit = remaining < limit ? remaining : limit;
-
-    const newOffset = offset + (60);
-    console.log(newOffset);
+    const newOffset = offset + limit;
     setOffset(newOffset);
-    setLimit(newLimit);
   };
 
   return (
     <div className="pagination">
-      <button className="pagebutton" disabled={offset === 0} onClick={handlePrevClick}>
-        Previous
+      <button
+        className="pagebutton"
+        disabled={offset === 0}
+        onClick={handlePrevClick}
+      >
+        ←
       </button>
-      <button className="pagebutton" disabled={offset + limit + limit> max} onClick={handleNextClick}>
-        Next
+      <button
+        className="pagebutton"
+        disabled={remaining === 0}
+        onClick={handleNextClick}
+      >
+        →
       </button>
     </div>
   );
-};
+}
 
 export default Pagination;
