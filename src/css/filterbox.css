@@ -1,17 +1,110 @@
-
-
-
-button.secondary.highlighted {
-border: none;
-border-radius: 0px;
-margin: 0px;
-
+button.highlighted {
+  opacity: 1;
+  border: 2px solid #000000;
 }
 
-button.primary.highlighted {
-  border: none;
-  border-radius: 0px;
-  margin: 0px;
+button.halfhighlight {
+  opacity: 1;
+}
+
+button {
+  display: inline-block;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: center;
+  width: 4rem;
+  height: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  text-transform: capitalize;
+  opacity: 0.4;
+  transition: all 0.1s ease-in-out;
+  backface-visibility: hidden;
+}
+
+button:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+
+
+
+button.primary,
+button.secondary {
+  opacity: 0.8;
+}
+
+button.primary.highlighted, button.secondary.highlighted {
+  opacity: 1;
+}
+
+.type-container,
+.primaryTypeContainer,
+.secondaryTypeContainer,
+.gen-container,
+.stat-container,
+.other-container {
+  text-align: center;
+  align-self: center;
+  display: block;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.type-container button,
+.primaryTypeContainer button,
+.secondaryTypeContainer button,
+.gen-container button,
+.stat-container button,
+.other-container button {
+  display: inline-block;
+}
+
+.primaryTypeContainer button,
+.secondaryTypeContainer button {
+  width: 4rem;
+}
+
+.type-container button,
+.gen-container button,
+.stat-container button,
+.other-container button {
+  width: 5rem;
+  height: 2rem;
+}
+
+.type-container button,
+.primaryTypeContainer button,
+.secondaryTypeContainer button,
+.gen-container button,
+.stat-container button,
+.other-container button {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  text-transform: capitalize;
+}
+
+.stat-container
+ {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: 1rem auto;
+  width: 10rem;
+}
+
+.other-container {
+  width: 16rem;
+  justify-items: center;
+  margin: 1rem auto;
 
 }
 
@@ -21,224 +114,42 @@ button.primary.highlighted {
   display: block;
   border-radius: 5px;
   padding: 5px;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem
 }
 
+.filterbox button {
+  width: 5rem;
+  height: 2rem;
+}
 
-.filterbox button{
-  display: inline-block;
-  padding: 0px;
-  margin: 0.2rem;
+.filterbox button,
+.type-container button,
+.primaryTypeContainer button,
+.secondaryTypeContainer button,
+.gen-container button,
+.stat-container button,
+.other-container button {
+  margin: 0.15rem;
   border-radius: 5px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  justify-content: center;
-  width: 4rem;
-  height: 1.5rem;
 }
 
-button.primary {
-  background-color:#daa5a5;
-  border-radius: 0px;
-  margin: 0px;
-  display: inline-block;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  width: 6rem;
-  height: 1.5rem;
-  opacity: 0.5;
-  justify-content: center;
-}
-
-button.secondary {
-  background-color: #a5c2da;
-  border-radius: 0px;
-  margin: 0px;
-  display: inline-block;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  width: 6rem;
-  height: 1.5rem;
-  opacity: 0.5;
-  justify-content: center;}
-
-.type-container {
-  align-self: center;
-}
-
-.primaryTypeContainer {
-  text-align: center;
-  align-self: center;
-  display: block;
-  border-radius: 5px;
-  padding: 5px;
-  background-color:#daa5a5
-}
-
+.primaryTypeContainer,
 .secondaryTypeContainer {
   text-align: center;
   align-self: center;
   display: block;
   border-radius: 5px;
   padding: 5px;
-  background-color: #a5c2da;
 }
 
-.type-container button {
-  display: inline-block;
-  padding: 0px;
-  margin: 0.2rem;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  width: 4rem;
-  height: 1.5rem;
-  opacity: 0.7;
-  justify-content: center;
-
-  
+#my-div {
+  display: none; /* set the default state to hidden */
 }
-
-.gen-container {
-  text-align: center;
-  align-self: center;
-  display: block;
-  border-radius: 5px;
-  padding: 5px;}
-
-.gen-container button {
-  display: inline-block;
-  padding: 0px;
-  margin: 0.2rem;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  width: 4rem;
-  height: 1.5rem;
-  opacity: 0.8;
-  justify-content: center;
-
-  
+.show {
+  display: block; /* show the div when the 'show' class is applied */
 }
 
 
-
-.stat-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
-  margin: 1rem auto;
-  width: 50%;
-  border-radius: 5px;
-  padding: 5px;
-}
-.other-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
-  margin: 1rem auto;
-  width: 50%;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.stat-container button {
-  width: 5rem;
-  height: 2rem;
-  opacity: 0.7;
-
-}
-
-.other-container button {
-  width: 5rem;
-  height: 2rem;
-  opacity: 0.7;
-}
-
-
-button.normal {
-    background-color: #A8A77A;
-  }
-  
-  button.fire {
-    background-color: #EE8130;
-  }
-  
-  button.water {
-    background-color: #6390F0;
-  }
-  
-  button.electric {
-    background-color: #F7D02C;
-  }
-  
-  button.grass {
-    background-color: #7AC74C;
-  }
-  
-  button.ice {
-    background-color: #96D9D6;
-  }
-  
-  button.fighting {
-    background-color: #C22E28;
-  }
-  
-  button.poison {
-    background-color: #A33EA1;
-  }
-  
-  button.ground {
-    background-color: #E2BF65;
-  }
-  
-  button.flying {
-    background-color: #A98FF3;
-  }
-  
-  button.psychic {
-    background-color: #F95587;
-  }
-  
-  button.bug {
-    background-color: #A6B91A;
-  }
-  
-  button.rock {
-    background-color: #B6A136;
-  }
-  
-  button.ghost {
-    background-color: #735797;
-  }
-  
-  button.dragon {
-    background-color: #6F35FC;
-  }
-  
-  button.dark {
-    background-color: #705746;
-  }
-  
-  button.steel {
-    background-color: #B7B7CE;
-  }
-  
-  button.fairy {
-    background-color: #D685AD;
-  }
-  
-  button.highlighted {
-    opacity: 1;
-    border: 2px solid #000000;
-  }
-
-/* Path: src\css\pokemon.css */
-  
-  

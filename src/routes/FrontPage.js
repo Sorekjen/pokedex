@@ -13,18 +13,11 @@ function getIDFromPokemon(pokemon) {
     .replace("/", ""));
 }
 
-function sortListByUrl(list)
-{
-  return list.sort((a, b) => {
-    return getIDFromPokemon(a) - getIDFromPokemon(b);
-  });
-}
 
 function FrontPage() {
   const [generationsCached, setGenerationsCached] = useState([]);
   const [filterProperties, setFilterProperties] = useState([{ stats: [], height: 0, weight: 0, genRange: [], primaryType: "", secondaryType: "" , toggle: false}]);
   const [generation, setGeneration] = useState([]);
-  const [min, setMin] = useState(0);
   const [max, setMax] = useState(0);
   const [pokemonList, setPokemonList] = useState([]);
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
@@ -50,11 +43,6 @@ function FrontPage() {
     setFilterProperties(newFilter);
   }, [filterProperties]);
 
-
-
-  
-  
-
   useEffect(() => {
     if(!generation || generation.length === 0) return;
     setIsLoading(true);
@@ -72,18 +60,13 @@ function FrontPage() {
   }, [generation]);
 
   useEffect(() => {
-    setOffset(min);
-    console.log("min: " + min);
-  }, [min]);
-
-  useEffect(() => {
     function fetchPokemon() {
     setCurrentPokemonList(filteredPokemonList ? filteredPokemonList.slice(offset, offset + limit) : []);
     }
     fetchPokemon();
     console.log("offset: " + offset);
     setShouldRender(false);
-  }, [offset,max, filteredPokemonList]);
+  }, [offset, filteredPokemonList, max]);
 
   useEffect(() => {
     console.log("currentPokemonList" + currentPokemonList);
@@ -106,8 +89,6 @@ function FrontPage() {
     console.log("filteredPokemonList: " + filteredPokemonList.map(x => x.name));
     if(filteredPokemonList === undefined) return;
     setMax(filteredPokemonList.length);
-    setMin(1);
-    setOffset(0);
   }, [filteredPokemonList]);
 
   return (
@@ -137,14 +118,15 @@ function FrontPage() {
         </div>
       ) : null}
       </div>
+      <div className="paginationcontainer">
       <Pagination
         limit={limit}
         offset={offset}
         max={max}
-        min={min}
         setOffset={setOffset}
         setLimit={setLimit}
       />
+      </div>
     </div>
   );
 }

@@ -3,15 +3,29 @@ body {
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 960px;
-  margin: 1% auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* define the size of the grid columns */
-  gap: 1rem; /* add some space between grid items */
-  padding: 0px;
+.App {
+  text-align: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  padding: 2rem, 2rem;
 }
 
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* define the size of the grid columns */
+  gap: 0.5rem; /* add some space between grid items */
+  padding: 0px;
+
+  align-self: center;
+}
+.filterbox {
+ margin: 0 auto;
+}
 
 /* Set 3 columns on screens that are at least 400px wide */
 @media (max-width: 800px) {
@@ -27,19 +41,14 @@ body {
   }
 }
 
-.pokemoncard {
-  height: auto; /* adjust as needed */
-  display: grid;
-  width: 100%;
-  margin: 0px;
 
-}
-
-.pagination {
+.paginationcontainer {
   display: flex;
   justify-content: center;
-  margin: 20px;
-  width: 100%
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+
 }
 
 /* Button style */

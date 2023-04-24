@@ -16,7 +16,8 @@ const typeColors = {
   psychic: 'rgba(248, 88, 136, 0.3)',
   rock: 'rgba(184, 160, 56, 0.3)',
   steel: 'rgba(184, 184, 208, 0.3)',
-  water: 'rgba(104, 144, 240, 0.3)'
+  water: 'rgba(104, 144, 240, 0.3)',
+
 };
 
 export default typeColors;

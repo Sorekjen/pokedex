@@ -9,14 +9,15 @@ function Card({pokemonData, id}) {
 
   return (
     <div className={`card`}
-    style={{background: `linear-gradient(135deg, ${typeColors[primaryType]} 0%, ${typeColors[primaryType]} 70%, ${typeColors[secondaryType]} 70%, ${typeColors[secondaryType]} 100%`}}>
+    style={{background: `linear-gradient(160deg, ${typeColors[primaryType]} 0%, ${typeColors[primaryType]} 65%, ${typeColors[secondaryType]} 65%, ${typeColors[secondaryType]} 100%`}}>
 
     <Link to={{ pathname: `/about/${pokemonData.id}`}}>
         <div className="card-image">
           <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`} alt={pokemonData.name} />
         </div>
         <div className="card-content">
-          <h3>{pokemonData.name} # {pokemonData.id}</h3>
+          <p>#{pokemonData.id}</p>
+          <h3>{pokemonData.name}</h3>
         </div>
       </Link>
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
+import '../css/pagination.css';
 
-function Pagination({ offset, limit, min, max, setOffset, setLimit }) {
+function Pagination({ offset, limit, max, setOffset, setLimit }) {
   const handlePrevClick = () => {
     setLimit(60);
     const newOffset = offset - 60;
@@ -8,22 +9,21 @@ function Pagination({ offset, limit, min, max, setOffset, setLimit }) {
   };
 
   const handleNextClick = () => {
-    const remaining = max - (offset + limit) + 1;
+    const remaining = max - (offset + limit);
     const newLimit = remaining < limit ? remaining : limit;
 
     const newOffset = offset + (60);
     console.log(newOffset);
     setOffset(newOffset);
     setLimit(newLimit);
-    console.log("offset: " + offset + " limit: " + limit + "min: " + min + " max: " + max);
   };
 
   return (
     <div className="pagination">
-      <button className="pagebutton" disabled={offset === min} onClick={handlePrevClick}>
+      <button className="pagebutton" disabled={offset === 0} onClick={handlePrevClick}>
         Previous
       </button>
-      <button className="pagebutton" disabled={offset + limit > max} onClick={handleNextClick}>
+      <button className="pagebutton" disabled={offset + limit + limit> max} onClick={handleNextClick}>
         Next
       </button>
     </div>

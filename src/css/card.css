@@ -7,114 +7,53 @@
   
   .card-image {
     justify-content: center;
-    align-items: center;    
+    align-self: center;
     overflow: hidden;
     position: relative;
     object-fit: contain;
-    padding: 1rem; 
+    padding: 0.35rem; 
+    padding-bottom :0;
+    
   }
   
   .card-image img {
     max-width: fit-content;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
   }
   
   .card-content {
-    padding: 10px;
+    padding: 0.5rem;
     text-align: center;
     white-space: nowrap; 
     overflow: hidden;
+    padding-top: 0;
+    align-self: flex-end;
   }
   
   .card-content h3 {
     margin: 0;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
   }
   
-  .pokemon--bug {
-    background-color: rgba(168, 184, 32, 0.3);
+  .card-content p 
+  {
+    margin: 0;
+    font-size: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
   }
-  
-  .pokemon--dark {
-    background-color: rgba(112, 88, 72, 0.3);
-  }
-  
-  .pokemon--dragon {
-    background-color: rgba(112, 56, 248, 0.3);
-  }
-  
-  .pokemon--electric {
-    background-color: rgba(248, 208, 48, 0.3);
-  }
-  
-  .pokemon--fairy {
-    background-color: rgba(238, 153, 172, 0.3);
-  }
-  
-  .pokemon--fighting {
-    background-color: rgba(192, 48, 40, 0.3);
-  }
-  
-  .pokemon--fire {
-    background-color: rgba(240, 128, 48, 0.3);
-  }
-  
-  .pokemon--flying {
-    background-color: rgba(168, 144, 240, 0.3);
-  }
-  
-  .pokemon--ghost {
-    background-color: rgba(112, 88, 152, 0.3);
-  }
-  
-  .pokemon--grass {
-    background-color: rgba(120, 200, 80, 0.3);
-  }
-  
-  .pokemon--ground {
-    background-color: rgba(224, 192, 104, 0.3);
-  }
-  
-  .pokemon--ice {
-    background-color: rgba(152, 216, 216, 0.3);
-  }
-  
-  .pokemon--normal {
-    background-color: rgba(168, 168, 120, 0.3);
-  }
-  
-  .pokemon--poison {
-    background-color: rgba(160, 64, 160, 0.3);
-  }
-  
-  .pokemon--psychic {
-    background-color: rgba(248, 88, 136, 0.3);
-  }
-  
-  .pokemon--rock {
-    background-color: rgba(184, 160, 56, 0.3);
-  }
-  
-  .pokemon--steel {
-    background-color: rgba(184, 184, 208, 0.3);
-  }
-  
-  .pokemon--water {
-    background-color: rgba(104, 144, 240, 0.3);
-  }
-  
+  .card {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.3s ease-out;
 
-.card {
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  margin: 0px;
-  object-fit: contain;
-
-}
+  }

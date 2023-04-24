@@ -1,14 +1,23 @@
+import React from "react";
+import buttonColors from "../helpers/buttonColors.js";
 
-function Button({label, callback, highlighted}) {
+function Button({label, callback, highlighted, value, halfhighlight, color}) {
   const handleClick = () => {
     console.log("button clicked: " + label)
-    callback(label);
+    callback(value);
+  }
+  let  colorOfButton;
+  if (typeof color === "undefined" || color === null || color === "") {
+    colorOfButton = buttonColors[value];
+  } else {
+    colorOfButton = buttonColors[color];
   }
 
   return (
     <button
-        className={`${label} ${highlighted ? "highlighted" : ""}` }
-        onClick={()=> handleClick(label)}
+        className={`${value} ${highlighted ? "highlighted" : "" } ${halfhighlight ? "halfhighlight" : ""}`}
+        onClick={()=> handleClick(value)}
+        style={{background: `${colorOfButton}`}}
       
     >
       {label}
