@@ -4,9 +4,10 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
-    height: 2.5rem;
+    height: 4rem;
     position: sticky;
     top: 0;
+    font-size: 2rem;
     z-index: 1;
   }
   
@@ -46,7 +47,7 @@ nav {
   h3 {
     display: block;
     color: #333;
-    font-size: 1rem;
+    font-size: 2rem;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;

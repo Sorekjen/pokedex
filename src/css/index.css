@@ -15,30 +15,10 @@ body {
   }
 
   html {
-    font-size: 18px;
+    font-size: 10px;
   }
   
   /* Set font size to 18px on screens that are at least 600px wide */
-  @media (min-width: 600px) {
-    html {
-      font-size: 20px;
-    }
-  }
   
-  /* Set font size to 20px on screens that are at least 900px wide */
-  @media (min-width: 900px) {
-    html {
-      font-size: 22px;
-    }
-  }
-  
-  /* Set font size to 22px on screens that are at least 1200px wide */
-
-
-  @media (pointer: none) {
-    button:hover {
-      transform: 0px;
-    }
-  }
   
   

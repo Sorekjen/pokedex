@@ -39,9 +39,6 @@ function FilterBox({ callback }) {
   });
 
 
-  const elementRef = useRef(null);
-
-
   useEffect(() => {
     callback(filter);
   }, [filter]);
@@ -78,9 +75,6 @@ function FilterBox({ callback }) {
 
   const handleStatClick = useCallback(
     (statName) => {
-
-
-
       setFilter((prevFilter) => {
         return {
           ...prevFilter, height: false, weight: false,
@@ -158,17 +152,13 @@ function FilterBox({ callback }) {
         return {gen: false, sort: !prevDropTable.sort, type: false};
       }
 })
-console.log(dropToggle);
 };
 
-  useEffect(() => {
-    console.log(dropToggle);
-  }, [dropToggle]);
 
 
   return ( 
     
-      <div ref={elementRef} className="filterbox">
+      <div className="filterbox">
         <div className="drop-list">
         <ul>
           <li>
