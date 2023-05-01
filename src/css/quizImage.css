@@ -1,0 +1,44 @@
+
+.quizimage-container img {
+    aspect-ratio: 1/1;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 2;
+    
+}
+
+.quizimage-container {
+    padding: 2rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.quizimage-container img.medium {
+    opacity: 0.9;
+    filter: brightness(0);
+}
+
+.quizimage-container img.expert {
+    opacity: 0.9;
+    filter: brightness(0);
+    scale: -1;
+    transform: scaleX(-1);
+}
+
+.quizimage-container img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+    margin: 0 auto;
+}
+
+
+

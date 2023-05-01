@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import "../css/card.css";
+
 import typeColors from "../helpers/typeColors.js";
+
 
 
 function Card({pokemonData, id}) {
@@ -8,6 +8,7 @@ function Card({pokemonData, id}) {
   const secondaryType = pokemonData.types.length === 2 ? pokemonData.types[1].type.name : primaryType;
 
   return (
+    <div className={"card-container"}>
     <div className={"card-background"} 
     style={{background: `linear-gradient(160deg, ${typeColors[primaryType]} 0%, ${typeColors[primaryType]} 65%, ${typeColors[secondaryType]} 65%, ${typeColors[secondaryType]} 100%`}} >
     <div className={`card`}>
@@ -17,8 +18,9 @@ function Card({pokemonData, id}) {
         </div>
         <div className="card-content">
           <p>#{pokemonData.id}</p>
-          <h3>{pokemonData.species.name}</h3>
+          <h3>{pokemonData.name}</h3>
         </div>
+    </div>
     </div>
     </div>
   );

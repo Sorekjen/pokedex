@@ -10,18 +10,18 @@
     align-items: center;
     text-align: center;
     background-color: rgba();
-    height: 5rem;
+    height: 8rem;
 }
 
 .pagination button {
     display: flex;
     background-color: #ff9a56;
     opacity: 0.9;
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 0;
-    width: 4rem;
-    height: 4rem;    
-    margin: 1rem 1rem;
+    width: 10rem;
+    height: 5.5rem;    
+    margin: 2rem 2rem;
 }
 
 

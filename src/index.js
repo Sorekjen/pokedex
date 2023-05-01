@@ -5,6 +5,7 @@ import "./css/index.css"
 import Root from "./routes/Root"
 import About from "./routes/About"
 import FrontPage from "./routes/FrontPage"
+import Quiz from "./routes/Quiz"
 import {createHashRouter , Outlet, RouterProvider } from "react-router-dom"
 
 const router = createHashRouter([
@@ -18,12 +19,16 @@ const router = createHashRouter([
             },
             {
                 path: "/pokedex",
-                element: <FrontPage key={1}/>,
+                element: <FrontPage key={2}/>,
             },
             {
-                path: "/about",
-                element: <About/>,
+                path: "/quiz",
+                element: <Quiz key={3}/>,
             },
+            {
+                path: "/about/:id",
+                element: <About key={4}/>,
+            },            
         ],
     },
 ])

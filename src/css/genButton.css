@@ -1,31 +1,25 @@
 
   
 
-  .card-background:hover {
+  .gen-card-background:hover {
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
-
-  }
-
-  .card-container{
-    width: 100%;
   }
   
-  .card-image {
+  .gen-image-box {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-self: center;
     position: relative;
     object-fit: contain;
-    padding: 1rem; 
+    padding: 0.5rem; 
     padding-bottom: 0;
     height: 75%;
     width: same-as-height;
     margin: 0px;
     box-sizing: border-box;
     position: relative;
-
-    top: 0;
-    left: 0;
   }
 
   a {
@@ -33,14 +27,19 @@
     height: 100%;
   }
   
-  .card-image img {
+  .gencard-pokemon {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  .gencard-pokemon img {
     width: 100%;
     height: 100%;
     margin: 0;
-    z-index: 2;
   }
   
-  .card-content {
+  .gen-card-content {
     padding: 0rem;
     text-align: center;
     white-space: nowrap; 
@@ -52,34 +51,23 @@
     padding-bottom: 0.2rem;
   }
 
-  #silhouette {
-    
-    opacity: 0.25;
-    height: 14rem;
-    width: 14rem;
+  #gen-silhouette {
+    -webkit-filter: grayscale(100%) brightness(0);
+    filter: grayscale(100%) brightness(0);
+    opacity: 0.2;
+    height: 105%;
+    width: 105%;
     position: absolute;
     z-index: -1;
-    left: -5.2rem;
-    top: -4.5rem;
+    left: 0.2rem;
+    top: -0.45rem;
     transition: ease-in;
-    scale: 0.5;
-    
 
   }
 
-  #silhouette-secondary {
-    
-    opacity: 0.25;
-    height: 14rem;
-    width: 14rem;
-    position: absolute;
-    z-index: -1;
-    left: 7rem;
-    top: 9rem;
-    transition: ease-in;
-    scale: 0.5;
-    
-
+  .gencard-pokemon.one, .gencard-pokemon.two, .gencard-pokemon.three {
+    top: 0;
+    left: 0;
   }
 
 
@@ -91,7 +79,7 @@
     overflow: hidden;
   }
   
-  .card-content h3 {
+  .gen-card-content h3 {
     margin: 0;
     font-size: 1.3rem;
     font-weight: bold;
@@ -100,17 +88,15 @@
   }
   
 
-  .card {
-    height: 19rem;
-    width: 15rem;
-    padding: 0px;
+  .gen-card {
+    width: 20rem;
+    height: 10rem;
   }
 
-  .card-background
+  .gen-card-background
   {
-    margin: 0 auto;
-    width: 100%;
     border-radius: 0.8rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,6 +105,16 @@
     transition: transform 0.3s ease-out;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    max-width: 30rem;
   }
+
+  .gencard-pokemon img.highlighted
+  {
+    opacity: 1;
+  }
+  .gencard-pokemon img.notHighLighted
+  {
+    opacity: 0;
+
+  }
+  
 

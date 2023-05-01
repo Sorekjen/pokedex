@@ -1,0 +1,48 @@
+.difficulty-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .difficulty-btn {
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    height: 10rem;
+    width: 20rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  .difficulty-btn.selected#easy {
+    background-color: rgba(0, 128, 0, 0.673);
+    color: white;
+  }
+  
+  .difficulty-btn.selected#medium {
+    background-color: rgba(255, 255, 0, 0.581);
+    color: black;
+  }
+  
+  .difficulty-btn.selected#hard {
+    background-color: rgba(255, 0, 0, 0.626);
+    color: white;
+  }
+  
+  .difficulty-btn.selected#expert {
+    background-color: rgba(0, 0, 0, 0.581);
+    color: white;
+  }
+  
+  .difficulty-btn:hover {
+    background-color: #eee;
+  }
+  

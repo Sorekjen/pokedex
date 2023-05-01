@@ -1,0 +1,129 @@
+.quiz-start {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-start h1 {
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+}
+
+button.end-quiz-button {
+    background : rgba(0,0,0,0);
+    border: none;
+    color: #333;
+    font-size: 3.5rem;
+    align-self: left;
+    justify-self: left;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 0rem;
+    left: 0.7rem;
+    z-index: 1;
+}
+
+button.end-quiz-button:hover {
+    background : rgba(0,0,0,0);
+    border: none;
+    color: #333;
+    font-size: 3.5rem;
+    align-self: left;
+    justify-self: left;
+    max-width: none;
+    transform: none;
+    box-shadow: none;
+    color: #ff9a56;
+
+}
+
+.quiz-header {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    margin: 0 auto;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+
+}
+
+.quiz-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+
+}
+
+.startbutton {
+    margin: 0 auto;
+    padding: 0.5rem;
+    width: 50%;
+    height: 10rem;
+    max-width: 40rem;
+    background-color: #ff9a56;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 10rem;
+    border-radius: 2rem;
+}
+
+.question {
+    border: none;
+    box-shadow: none;
+    margin: 0 auto;  
+    padding: 1rem;
+}
+
+.question button {
+    margin: 0.5rem auto;  
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 40rem;
+    
+
+}

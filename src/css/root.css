@@ -4,13 +4,17 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
-    height: 4rem;
+    height: 6rem;
     position: sticky;
     top: 0;
-    font-size: 2rem;
+    font-size: 3rem;
     z-index: 1;
   }
   
+nav a{
+  margin: auto 1rem;
+}
+
   ul {
     display: flex;
     justify-content: center;

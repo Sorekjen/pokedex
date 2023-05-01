@@ -1,5 +1,6 @@
 import genRangeFromGeneration from "./genRangeFromGeneration.js";
 function filterPokemon(pokemonList, filters) {
+  if(filters === null) return pokemonList;
   function equals(str1, str2) {
     if (typeof str2 !== "string") return false;
     if (typeof str1 !== "string") return false;
@@ -27,11 +28,21 @@ function filterPokemon(pokemonList, filters) {
       " " +
       filters.primaryType +
       " " +
-      filters.secondaryType
+      filters.secondaryType +
+      " " +
+      filters.stats +
+      " " +
+      filters.search
   );
 
   if (!pokemonList) return;
-
+  
+  if (filters.search) {
+    if (!isNaN(+filters.search)) return pokemonList.filter((pokemon) => pokemon.id === +filters.search)  ;
+    if (filters.search !== "") return pokemonList.filter((pokemon) => pokemon.name.includes(filters.search)).sort((a, b) => {
+      return filters.toggle ? b.id - a.id : a.id - b.id;
+    });
+  }
   let filteredPokemon = pokemonList.filter((pokemon) => {
     if (
       filters.genRange &&

@@ -1,0 +1,90 @@
+.navbar {
+    position: fixed;
+    bottom: 0;
+    height: 8rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    align-self: center;
+    margin: 0;
+    width: 100%;
+  }
+  
+  
+  .menu-btn {
+    margin: 0 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 1rem;
+    height: 7rem;
+    width: 12rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .break{
+    flex-basis: 100%;
+    height: 0;
+  }
+  
+  .menu-btn.active {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .menu {
+    position: fixed;
+    bottom: 10rem;
+    max-height: 50rem;
+    overflow-y: auto;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    display: none;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+  }
+
+  .navbar h1
+  {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .menu.show {
+    display: block;
+    transform: translateY(0%);
+    animation: slide-up 0.3s ease-out forwards;
+  }
+  
+  .menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease-out;
+  }
+  
+  .menu a:hover {
+    background-color: #eee;
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  

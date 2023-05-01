@@ -1,23 +1,25 @@
-button.highlighted {
+.filterbox button.highlighted {
   opacity: 1;
   border: 0.07rem solid #404040;
 }
 
-button.halfhighlight {
+.filterbox button.halfhighlight {
   opacity: 1;
 }
 
-button {
+.filterbox button {
   display: inline-block;
   padding: 0.2rem;
   margin: 0.3rem;
   border-radius: 0.5rem;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   justify-content: center;
-  width: 6rem;
-  height: 2.3rem;
+  width: 10rem;
+  height: 3rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
   text-shadow: 1px 1px 2px rgba(0,0,0,.7);
   text-transform: capitalize;
   opacity: 0.4;
@@ -27,33 +29,34 @@ button {
 
 @media (max-width: 600px) {
   button {
-    width: 7rem;
     height: 5rem;
-    font-size: 1.5rem;
   }
 }
   
 
-button:hover {
+.filterbox button:hover {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
 
-button.primary, button.secondary {
+.filterbox button.primary, button.secondary {
   opacity: 0.8;
-  width: 7rem;
-  height: 2.2;
+  width: 10rem;
+  height: 5;
 }
 
-button.primary.highlighted, button.secondary.highlighted {
+.filterbox button.primary.highlighted, button.secondary.highlighted {
   opacity: 1;
 }
 
-
+.type-drop {
+  max-width: 80rem;
+  margin: 2rem auto;
+}
 
 .gen-drop, .stat-drop, .type-drop {
-  margin-top:1rem;
+  margin-top:2rem;
 }
 
 
@@ -73,32 +76,43 @@ button.primary.highlighted, button.secondary.highlighted {
   top: 0;
 }
 
-.stat-container, .gen-container {
+.stat-container {
   grid-template-columns: repeat(3, 1fr);
   display: grid;
   max-width: 10rem;
   justify-content: center;
   align-content: center;
   margin: 0 auto;
+  gap: 0.3;
 }
 
-.gen-container, .stat-container
-{
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.3rem;
+.gen-drop {
+  padding: 0.5rem;
+}
+
+.gen-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
+  padding: 0px;
+  max-width: 80rem;
+  margin-bottom: 2rem;
+  align-self: center;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  gap: 0.5rem;
 }
 
 
 
-.gen-container button{
-  width: 8rem;
-  height: 2.3rem;
 
-}
+
+
    
 .other-container button.Ascending,  .other-container button.Descending {
-  width: 3rem;
-  height: 2.2rem;
+
   padding: 0;
   margin-top: 1rem;
   opacity: 0.9;
@@ -108,6 +122,26 @@ button.primary.highlighted, button.secondary.highlighted {
 
 }
 
+.search-container {
+  align-self: right;
+  justify-self: right;
+  display: flex;
+  height: 3rem;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+
+
+
+
+
+
+.drop-list {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
 
 .filterbox ul {
   list-style: none;
@@ -115,7 +149,7 @@ button.primary.highlighted, button.secondary.highlighted {
   margin: 0;
   justify-content: left;
   margin: 0rem 1.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .filterbox a {
@@ -133,7 +167,18 @@ a:hover {
   cursor: pointer;
 }
 
+svg {
+  scale: 0.3;
+}
 
+a.closeDrop{
+  display: flex;
+  font-size: 2.5rem;
+  height:4rem;
+  width:8rem; 
+  margin: 0.5rem auto;
+  justify-content: center;
+}
 
 
 

@@ -1,0 +1,16 @@
+.evolution-detail-container {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .evolution-detail {
+
+  }
+  
+  .Arrow {
+    font-size: 3rem;
+    font-weight: 1;
+  }
+  
